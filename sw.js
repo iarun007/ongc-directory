@@ -1,4 +1,4 @@
-const cacheName = 'ongc-v2'; // <--- Increment this every time you update code
+const cacheName = 'ongc-v3'; // <--- Increment this every time you update code
 const assets = ['./', './index.html', './style.css', './app.js', './data.js', './manifest.json'];
 
 self.addEventListener('install', e => {
