@@ -4,52 +4,52 @@ const modal = document.getElementById('detailModal');
 const modalBody = document.getElementById('modalBody');
 const closeBtn = document.querySelector('.close-btn');
 
-// 1. Sort Alphabetically by Name on load
-const sortedContacts = contacts.sort((a, b) => a.name.localeCompare(b.name));
+// Sort Alphabetically by Name
+const sortedContacts = contacts.sort((a, b) => a.Name.localeCompare(b.Name));
 
-// 2. Render Short Form List
 function render(data) {
-    list.innerHTML = data.map((c, index) => `
-        <div class="card" onclick="showDetails('${c.cpf}')">
-            <img src="images/${c.img}" class="thumb-img" onerror="this.src='https://ui-avatars.com/api/?name=${c.name}&background=800000&color=fff'">
+    list.innerHTML = data.map((c) => `
+        <div class="card" onclick="showDetails('${c['CPF No']}')">
+            <img src="images/${c.Images || 'default.jpg'}" class="thumb-img" onerror="this.src='https://ui-avatars.com/api/?name=${c.Name}&background=800000&color=fff'">
             <div class="card-info">
-                <h3>${c.name}</h3>
-                <p>${c.desig} | ${c.dept}</p>
+                <h3>${c.Name}</h3>
+                <p>${c.Designation} | ${c.Department}</p>
             </div>
         </div>
     `).join('');
 }
 
-// 3. Show Full Details (using CPF as a unique ID)
 window.showDetails = (cpfId) => {
-    const p = sortedContacts.find(person => person.cpf === cpfId);
+    const p = sortedContacts.find(person => person['CPF No'] === cpfId);
+    if(!p) return;
+    
     modalBody.innerHTML = `
-        <img src="images/${p.img}" class="full-img" onerror="this.src='https://ui-avatars.com/api/?name=${p.name}&size=120&background=800000&color=fff'">
-        <h2 style="margin-bottom:5px;">${p.name}</h2>
-        <p style="color:#800000; font-weight:bold; margin-top:0;">${p.desig}</p>
+        <img src="images/${p.Images || 'default.jpg'}" class="full-img" onerror="this.src='https://ui-avatars.com/api/?name=${p.Name}&size=120&background=800000&color=fff'">
+        <h2 style="margin:0">${p.Name}</h2>
+        <p style="color:#800000; font-weight:bold; margin:5px 0;">${p.Designation}</p>
         
         <div class="detail-grid">
-            <div class="detail-item"><label>Department</label><span>${p.dept}</span></div>
-            <div class="detail-item"><label>CPF No</label><span>${p.cpf}</span></div>
-            <div class="detail-item"><label>Ext. No</label><span>${p.ext || 'N/A'}</span></div>
-            <div class="detail-item"><label>CRC Level</label><span>${p.crc || 'N/A'}</span></div>
+            <div class="detail-item"><label>Department</label><span>${p.Department}</span></div>
+            <div class="detail-item"><label>Section</label><span>${p.Section}</span></div>
+            <div class="detail-item"><label>CPF No</label><span>${p['CPF No']}</span></div>
+            <div class="detail-item"><label>Ext. No</label><span>${p['Ext No'] || 'N/A'}</span></div>
+            <div class="detail-item"><label>CRC Level</label><span>${p['CRC Level'] || 'N/A'}</span></div>
         </div>
 
         <div class="action-buttons">
-            <a href="tel:${p.mobile}" class="btn-call">📞 Call Mobile</a>
-            ${p.altMobile ? `<a href="tel:${p.altMobile}" class="btn-alt">📱 Alt Mobile</a>` : ''}
+            <a href="tel:${p.Mobile}" class="btn-call">📞 Call: ${p.Mobile}</a>
+            ${p['Alt Mobile'] ? `<a href="tel:${p['Alt Mobile']}" class="btn-alt">📱 Alt: ${p['Alt Mobile']}</a>` : ''}
         </div>
     `;
     modal.style.display = "block";
 }
 
-// 4. Advanced Search (Search by Name, Dept, or CPF)
 search.addEventListener('input', (e) => {
     const term = e.target.value.toLowerCase();
     const filtered = sortedContacts.filter(c => 
-        c.name.toLowerCase().includes(term) || 
-        c.dept.toLowerCase().includes(term) || 
-        c.cpf.includes(term)
+        c.Name.toLowerCase().includes(term) || 
+        c.Department.toLowerCase().includes(term) || 
+        c['CPF No'].includes(term)
     );
     render(filtered);
 });
