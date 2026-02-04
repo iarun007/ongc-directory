@@ -1,0 +1,13 @@
+:root { --ongc-maroon: #800000; --bg: #f4f4f9; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; background: var(--bg); }
+.header { background: var(--ongc-maroon); color: white; padding: 15px; text-align: center; position: sticky; top: 0; z-index: 10; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+.header img { margin-bottom: 5px; }
+.search-bar { padding: 15px; background: white; }
+#searchInput { width: 100%; padding: 12px; border-radius: 25px; border: 1px solid #ccc; box-sizing: border-box; font-size: 16px; outline: none; }
+.contact-list { padding: 10px; }
+.card { background: white; margin-bottom: 10px; padding: 15px; border-radius: 10px; display: flex; align-items: center; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.profile-img { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; margin-right: 15px; background: #eee; }
+.details { flex-grow: 1; }
+.details h3 { margin: 0; font-size: 18px; color: #333; }
+.details p { margin: 3px 0; color: #666; font-size: 14px; }
+.call-btn { text-decoration: none; background: #28a745; color: white; padding: 8px 15px; border-radius: 20px; font-weight: bold; font-size: 14px; }
