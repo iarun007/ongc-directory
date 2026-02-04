@@ -1,13 +1,31 @@
-:root { --ongc-maroon: #800000; --bg: #f4f4f9; }
-body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; background: var(--bg); }
-.header { background: var(--ongc-maroon); color: white; padding: 15px; text-align: center; position: sticky; top: 0; z-index: 10; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
-.header img { margin-bottom: 5px; }
-.search-bar { padding: 15px; background: white; }
-#searchInput { width: 100%; padding: 12px; border-radius: 25px; border: 1px solid #ccc; box-sizing: border-box; font-size: 16px; outline: none; }
+:root { --ongc-maroon: #800000; --gold: #D4AF37; }
+body { font-family: 'Segoe UI', Roboto, sans-serif; margin: 0; background: #f4f7f6; }
+
+/* Header & Search */
+.header { background: var(--ongc-maroon); color: white; padding: 15px; text-align: center; position: sticky; top: 0; z-index: 100; border-bottom: 3px solid var(--gold); }
+.search-container { padding: 12px; background: white; }
+#searchInput { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; font-size: 16px; }
+
+/* Contact List Card */
 .contact-list { padding: 10px; }
-.card { background: white; margin-bottom: 10px; padding: 15px; border-radius: 10px; display: flex; align-items: center; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
-.profile-img { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; margin-right: 15px; background: #eee; }
-.details { flex-grow: 1; }
-.details h3 { margin: 0; font-size: 18px; color: #333; }
-.details p { margin: 3px 0; color: #666; font-size: 14px; }
-.call-btn { text-decoration: none; background: #28a745; color: white; padding: 8px 15px; border-radius: 20px; font-weight: bold; font-size: 14px; }
+.card { background: white; display: flex; align-items: center; padding: 12px; margin-bottom: 8px; border-radius: 12px; box-shadow: 0 2px 5px rgba(0,0,0,0.08); cursor: pointer; }
+.thumb-img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; margin-right: 15px; border: 1px solid #eee; }
+.card-info h3 { margin: 0; font-size: 16px; color: #333; }
+.card-info p { margin: 3px 0 0; font-size: 13px; color: #777; }
+
+/* Modal Design */
+.modal { display: none; position: fixed; z-index: 200; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); overflow-y: auto; }
+.modal-content { background: white; margin: 10% auto; padding: 20px; width: 90%; max-width: 400px; border-radius: 20px; position: relative; text-align: center; }
+.full-img { width: 100px; height: 100px; border-radius: 50%; border: 3px solid var(--ongc-maroon); margin-bottom: 10px; }
+
+/* Grid for Details */
+.detail-grid { text-align: left; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 20px 0; border-top: 1px solid #eee; padding-top: 15px; }
+.detail-item label { display: block; font-size: 10px; color: #999; text-transform: uppercase; font-weight: bold; }
+.detail-item span { font-size: 14px; color: #333; font-weight: 500; }
+
+/* Action Buttons */
+.action-buttons { display: flex; flex-direction: column; gap: 10px; }
+.btn-call, .btn-alt { text-decoration: none; padding: 12px; border-radius: 10px; font-weight: bold; color: white; display: block; }
+.btn-call { background: #28a745; }
+.btn-alt { background: #007bff; }
+.close-btn { position: absolute; right: 20px; top: 10px; font-size: 30px; color: #ccc; cursor: pointer; }
