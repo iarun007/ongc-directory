@@ -158,6 +158,6 @@ I/c Process Lab"", CPF No: ""125813"", Ext No: ""6923"", Mobile: ""9428828037"",
 { Name: "S M Madhav", Department: "Medical",Section: "Medical", Designation: "Sr Matron", CPF No: "83675", Ext No: "7548", Mobile: "9969224956", Alt Mobile: ", CRC Level: "", Images: ""},
 { Name: "N R Sawant", Department: "Medical",Section: "Medical", Designation: "Sr Matron", CPF No: "83676", Ext No: "7592", Mobile: "9969224957", Alt Mobile: ", CRC Level: "", Images: ""},
 { Name: "J D Bagale", Department: "Medical",Section: "Medical", Designation: "Sr Supdt (Radiology)", CPF No: "83688", Ext No: "7554", Mobile: "9969224994", Alt Mobile: ", CRC Level: "", Images: ""},
-{ Name: "R R Karande", Department: "Medical",Section: "Medical", Designation: "Sr Supdt (Nursing)", CPF No: "83667", Ext No: "7587", Mobile: "9969227587", Alt Mobile: ", CRC Level: "", Images: ""},
+{ Name: "R R Karande", Department: "Medical",Section: "Medical", Designation: "Sr Supdt (Nursing)", CPF No: "83667", Ext No: "7587", Mobile: "9969227587", Alt Mobile: ", CRC Level: "", Images: ""}
 
 ];
