@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONGC Directory</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#800000">
+</head>
+<body>
+    <div class="header">
+        <img src="https://www.ongcindia.com/wps/wcm/connect/607e6074-6725-4c03-8874-9b596957a165/logo.png?MOD=AJPERES" alt="ONGC Logo" height="40">
+        <h2>ONGC Directory</h2>
+    </div>
+
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search name, designation, or phone...">
+    </div>
+
+    <div id="contactList" class="contact-list">
+        </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+    <script>
+        // Register Service Worker for Offline capability
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js');
+        }
+    </script>
+</body>
+</html>
