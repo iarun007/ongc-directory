@@ -29,20 +29,20 @@
             navigator.serviceWorker.register('sw.js');
         }
 
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js').then(reg => {
-        reg.addEventListener('updatefound', () => {
-            const newWorker = reg.installing;
-            newWorker.addEventListener('statechange', () => {
-                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                    // New version found! Reload to apply.
-                    window.location.reload();
-                }
-            });
-        });
-    });
-}
-        
+     
     </script>
+
+<script>
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(() => console.log("Service Worker Registered"))
+                    .catch(err => console.log("SW Registration Failed", err));
+            }
+        }, 2000); // Wait 2 seconds for main files to load first
+    });
+</script>
+    
 </body>
 </html>
